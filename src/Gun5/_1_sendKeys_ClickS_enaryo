@@ -1,0 +1,11 @@
+Test Senaryo
+1- http://www.practiceselenium.com git
+2- Check Out a tıklat Linktest"Check Out"
+3- email e bilgi gir id"email"
+4- name bilgi girid "name"
+5- addres e bilgi girid "address"
+6- Place Order butonuna tıklat."btn btn-primary"
+7- Açılan sayfaya geldiği assert
+   kontrol et.(yeni sayfada Menu yazısı
+   var mı?)
+   menu id "wsb-element-00000000-0000-0000-0000-000450914921"
