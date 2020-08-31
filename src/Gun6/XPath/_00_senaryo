@@ -1,0 +1,30 @@
+1- https://www.saucedemo.com/  sitesini açın
+2- login işlemini yapınız.
+//input [@id='password']
+////input [@id='user-name1']
+3- Sauce Labs Backpack  a tıklatın ve sepete ekletin.
+  //div[text()='Sauce Labs Backpack']  tıklat
+   //button[text()='ADD TO CART']
+4- Sonra geri dönün
+ //button[text()='<- Back']
+5- Sauce Labs Bolt T-Shirt  a tıklatın ve sepete ekleyin.
+6- sepete tıklatın
+7- CheckOut a tıklatın
+8- kullanıcı bilgilerini doldurup Continue ya tıklatın
+9- Burada her bir eşyanın ücretlerinin toplamının
+   aşağıdaki Item total e eşit olup olmadığını Assert ile test
+   ediniz.
+
+   //div[text()='Sauce Labs Backpack']/parent::*/parent::div -> /parent::*  bir üst e gider.parent e
+   //div[text()='Sauce Labs Backpack']/../../..   -> aynı işlemi para üste gider /..  ile
+   ((//div[@id='inventory_container'])[1]/div/div)[2]   -> [2] den önceki kısımda bulunan elamanlardan 2.sini bulur
+   (//div[@id='inventory_container'])[1]/div/div/following-sibling::div  -> /following-sibling::div kardeş div i bulur
+
+   *******
+   xpath de css selectordeki tag basina // koyulur ve parametrenin basina @ konulur
+      css in eleman bulmada zorlandigi veya ise yaramadigi yerlerde kullanilir
+
+      css selector de tag in text i kullanilmazken xpath de text ile eleman bulunabilir
+      //div[text()='text'] -->> parametre girmedigimiz icin @ isareti kullanmadik
+
+      text() kullanılacaksa ve üst satırlara çıkmak için kullan
