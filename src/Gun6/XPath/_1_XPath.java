@@ -1,5 +1,6 @@
 package Gun6.XPath;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utils.BaseStaticDriver;
@@ -41,6 +42,28 @@ public class _1_XPath extends BaseStaticDriver {
 
         WebElement contSepet=driver.findElement(By.xpath("//div[@id='shopping_cart_container']"));
         contSepet.click();
+        Thread.sleep(2000);
+        WebElement checkOut=driver.findElement(By.xpath("//a[@class='btn_action checkout_button']"));
+        checkOut.click();
+        Thread.sleep(2000);
+
+        WebElement firstname=driver.findElement(By.xpath("//input[@id='first-name']"));
+        firstname.sendKeys("Sati");
+        Thread.sleep(2000);
+        WebElement lastname=driver.findElement(By.xpath("//input[@id='last-name']"));
+        lastname.sendKeys("Demirci");
+        Thread.sleep(2000);
+        WebElement postacode=driver.findElement(By.xpath("//input[@id='postal-code']"));
+        postacode.sendKeys("47647");
+        Thread.sleep(2000);
+        WebElement contin=driver.findElement(By.xpath("//input[@class='btn_primary cart_button']"));
+        contin.click();
+        Thread.sleep(2000);
+        WebElement preis=driver.findElement(By.xpath("//div[@class='summary_subtotal_label']"));
+        String spreis=preis.getText();
+        Assert.assertEquals("Item total: $45.98",spreis);
+
+
 
         Thread.sleep(2000);
         driver.quit();
