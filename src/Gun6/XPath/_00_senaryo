@@ -14,7 +14,12 @@
 9- Burada her bir eşyanın ücretlerinin toplamının
    aşağıdaki Item total e eşit olup olmadığını Assert ile test
    ediniz.
+   ilk ücret=(//div[@class='inventory_item_price'])[1]
+             //a[@id='item_4_title_link']/following-sibling::div/following-sibling::div
 
+   ikinci ücret=//div[@class='inventory_item_price']
+                (//div[@class='inventory_item_price'])[2]
+                (//div[@id='inventory_container'])[1]/div/div/following-sibling::div  -> /following-sibling::div kardeş div i bulur
    //div[text()='Sauce Labs Backpack']/parent::*/parent::div -> /parent::*  bir üst e gider.parent e
    //div[text()='Sauce Labs Backpack']/../../..   -> aynı işlemi para üste gider /..  ile
    ((//div[@id='inventory_container'])[1]/div/div)[2]   -> [2] den önceki kısımda bulunan elamanlardan 2.sini bulur

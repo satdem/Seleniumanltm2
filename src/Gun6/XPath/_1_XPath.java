@@ -50,23 +50,45 @@ public class _1_XPath extends BaseStaticDriver {
         WebElement firstname=driver.findElement(By.xpath("//input[@id='first-name']"));
         firstname.sendKeys("Sati");
         Thread.sleep(2000);
+
         WebElement lastname=driver.findElement(By.xpath("//input[@id='last-name']"));
         lastname.sendKeys("Demirci");
         Thread.sleep(2000);
+
         WebElement postacode=driver.findElement(By.xpath("//input[@id='postal-code']"));
         postacode.sendKeys("47647");
         Thread.sleep(2000);
+
         WebElement contin=driver.findElement(By.xpath("//input[@class='btn_primary cart_button']"));
         contin.click();
         Thread.sleep(2000);
+
+        WebElement preis1=driver.findElement(By.xpath("(//div[@class='inventory_item_price'])[1]"));
+        String spreis1=preis1.getText();
+        WebElement preis2=driver.findElement(By.xpath("(//div[@class='inventory_item_price'])[2]"));
+        String spreis2=preis2.getText();
+        System.out.println("spreis1 = " + spreis1);
+        System.out.println("spreis2 = " + spreis2);
+
+
         WebElement preis=driver.findElement(By.xpath("//div[@class='summary_subtotal_label']"));
         String spreis=preis.getText();
-        Assert.assertEquals("Item total: $45.98",spreis);
+        System.out.println("spreis = " + spreis);
 
+        double d1=stringTodouble(spreis1);
+        double d2=stringTodouble(spreis2);
+        double d=stringTodouble(spreis);
 
+        System.out.println(d1+","+ d2+","+ d);
+        Assert.assertTrue("sonuçlar tutmuyor",d==d1+d2);
 
         Thread.sleep(2000);
         driver.quit();
+    }
+    public static double stringTodouble(String spreis1){
+        spreis1 =spreis1.replaceAll("[^0-9.]","");//"[^\\d.]" aynısı
+        double dpreis1=Double.parseDouble(spreis1);
+        return dpreis1;
     }
 
 }
