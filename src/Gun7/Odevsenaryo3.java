@@ -17,9 +17,12 @@ public class Odevsenaryo3 extends BaseStaticDriver {
         for (WebElement e:urunler) {
             e.click();
         }
+        Thread.sleep(1000);
 
         WebElement contSepet=driver.findElement(By.xpath("//div[@id='shopping_cart_container']"));
         contSepet.click();
+        Thread.sleep(1000);
+
         List<WebElement> urunsilme=driver.findElements(By.xpath("//button[@class='btn_secondary cart_button']"));
         for (WebElement e:urunsilme) {
             e.click();
@@ -28,6 +31,7 @@ public class Odevsenaryo3 extends BaseStaticDriver {
     WebElement sepetkontrol= driver.findElement(By.xpath("//div[@id='shopping_cart_container']"));
     String sepettext=sepetkontrol.getText();
     Assert.assertTrue("sepet boş değil", sepettext.isEmpty());
+        Thread.sleep(1000);
 
     driver.quit();
     }
