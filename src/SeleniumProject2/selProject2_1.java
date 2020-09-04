@@ -25,6 +25,7 @@ public class selProject2_1 extends BaseStaticDriver {
         WebElement fromAcount=driver.findElement(By.id("tf_fromAccountId"));
         Select selectfA=new Select(fromAcount);
         selectfA.selectByIndex(random);
+
         int random2=(int)(Math.random()*6);
         WebElement toAcount=driver.findElement(By.id("tf_fromAccountId"));
         Select selecttA=new Select(fromAcount);
