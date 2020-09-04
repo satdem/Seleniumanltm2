@@ -1,5 +1,6 @@
 package Gun9;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -38,6 +39,11 @@ public class selProjrct2_3 extends BaseStaticDriver {
         usd.click();
         WebElement purchase=driver.findElement(By.id("purchase_cash"));
         purchase.click();
+
+        WebElement text=driver.findElement(By.cssSelector("div[id='alert_content']"));
+        String gercek=text.getText();
+        String benimBuldugum="Foreign currency cash was successfully purchased.";
+        Assert.assertEquals("sonuçlar uyuşmuyor",benimBuldugum,gercek);
 
         Thread.sleep(2000);
         driver.quit();

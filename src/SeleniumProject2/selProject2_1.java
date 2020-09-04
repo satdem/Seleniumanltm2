@@ -1,5 +1,6 @@
 package SeleniumProject2;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -42,6 +43,10 @@ public class selProject2_1 extends BaseStaticDriver {
         Thread.sleep(2000);
         WebElement submit=driver.findElement(By.id("btn_submit"));
         submit.click();
+        WebElement text=driver.findElement(By.cssSelector("div[class='alert alert-success']"));
+        String gercek=text.getText();
+        String benimBuldugum="You successfully submitted your transaction.";
+        Assert.assertEquals("sonuçlar uyuşmuyor",benimBuldugum,gercek);
 
         Thread.sleep(2000);
         driver.quit();
