@@ -26,7 +26,7 @@ public class selProjrct2_3 extends BaseStaticDriver {
         currency.click();
         Thread.sleep(1000);
 
-        int random=(int)(Math.random()*15+1);
+        int random=(int)(Math.random()*14+1);
         WebElement currencysec=driver.findElement(By.id("pc_currency"));
         Select selectpD=new Select(currencysec);
         selectpD.selectByIndex(random);
