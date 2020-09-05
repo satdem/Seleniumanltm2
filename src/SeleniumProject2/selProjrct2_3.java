@@ -1,4 +1,4 @@
-package Gun9;
+package SeleniumProject2;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
